@@ -1,0 +1,24 @@
+# ---------------------------------------------------------------------------
+# Runtime
+# ---------------------------------------------------------------------------
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.32,<1.0
+pydantic[email]>=2.9,<3.0
+pydantic-settings>=2.6,<3.0
+
+# MongoDB (Motor driver + Beanie ODM)
+motor>=3.6,<4.0
+beanie>=1.27,<2.0
+
+# Security
+argon2-cffi>=23.1
+python-jose[cryptography]>=3.3
+python-multipart>=0.0.19
+
+# ---------------------------------------------------------------------------
+# Development / testing
+# ---------------------------------------------------------------------------
+pytest>=8.3
+pytest-asyncio>=0.25
+httpx>=0.28
+mongomock-motor>=0.0.35

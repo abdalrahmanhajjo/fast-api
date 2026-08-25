@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 33% 97%;
+    --foreground: 210 15% 12%;
+    --card: 40 28% 99%;
+    --card-foreground: 210 15% 12%;
+    --popover: 40 28% 99%;
+    --popover-foreground: 210 15% 12%;
+    --primary: 159 42% 30%;
+    --primary-foreground: 45 40% 98%;
+    --secondary: 40 18% 91%;
+    --secondary-foreground: 210 12% 20%;
+    --muted: 40 15% 92%;
+    --muted-foreground: 210 7% 42%;
+    --accent: 39 25% 91%;
+    --accent-foreground: 210 15% 15%;
+    --destructive: 2 63% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 14% 84%;
+    --input: 38 14% 81%;
+    --ring: 159 42% 30%;
+    --radius: 0.9rem;
+    --shadow: 165 28% 18%;
+  }
+  .dark {
+    --background: 160 11% 8%;
+    --foreground: 45 18% 92%;
+    --card: 160 9% 11%;
+    --card-foreground: 45 18% 92%;
+    --popover: 160 9% 11%;
+    --popover-foreground: 45 18% 92%;
+    --primary: 151 43% 62%;
+    --primary-foreground: 160 18% 10%;
+    --secondary: 160 7% 17%;
+    --secondary-foreground: 45 16% 90%;
+    --muted: 160 7% 16%;
+    --muted-foreground: 155 5% 62%;
+    --accent: 160 8% 16%;
+    --accent-foreground: 45 16% 92%;
+    --destructive: 3 66% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 160 7% 20%;
+    --input: 160 7% 23%;
+    --ring: 151 43% 62%;
+    --shadow: 160 40% 2%;
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply m-0 bg-background font-sans text-foreground antialiased;
+    background-image: radial-gradient(
+      circle at 18% -10%,
+      hsl(var(--primary) / 0.055),
+      transparent 28rem
+    );
+  }
+  ::selection {
+    @apply bg-primary/20;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  a {
+    @apply no-underline;
+  }
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[.16em] text-primary;
+  }
+  .page-title {
+    @apply text-3xl font-semibold tracking-[-.04em] sm:text-4xl;
+  }
+  .page-copy {
+    @apply mt-2 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base;
+  }
+  .section-rule {
+    @apply border-t border-border/80;
+  }
+  .menu-item {
+    @apply flex cursor-pointer items-center gap-2 rounded-lg px-2 py-2 text-sm outline-none hover:bg-accent focus:bg-accent;
+  }
+  .skip-link {
+    @apply fixed left-3 top-3 z-[60] -translate-y-20 rounded-lg bg-primary px-4 py-2 text-sm text-primary-foreground transition focus:translate-y-0;
+  }
+  .data-number {
+    @apply font-mono tabular-nums tracking-[-.05em];
+  }
+}
