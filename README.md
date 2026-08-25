@@ -346,3 +346,4 @@ curl localhost:8000/stats/average-age
 curl localhost:8000/stats/top-cities
 ```
 # fast-api
+# fast-api
